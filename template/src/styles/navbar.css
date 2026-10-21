@@ -1,0 +1,255 @@
+
+/* ===== Header ===== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+
+  background: rgba(11, 17, 32, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+/* ===== Navbar Layout ===== */
+
+.navbar {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* ===== Logo ===== */
+
+.navbar-logo {
+  flex-shrink: 0;
+  color: #f8fafc;
+
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+
+  transition: opacity 180ms ease;
+}
+
+.navbar-logo span {
+  color: #60a5fa;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+/* ===== Menu Container ===== */
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+/* ===== Navigation Links ===== */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-block: 8px;
+
+  color: #a7b4c8;
+  font-size: 0.92rem;
+  font-weight: 500;
+
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+
+  background: #60a5fa;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f8fafc;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ===== Contact Button ===== */
+
+.navbar-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 44px;
+  padding: 0 20px;
+
+  color: #ffffff;
+  background: #1d4ed8;
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 9px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.navbar-contact span {
+  font-size: 1.1rem;
+  transition: transform 180ms ease;
+}
+
+.navbar-contact:hover {
+  background: #2563eb;
+  box-shadow: 0 6px 22px rgba(37, 99, 235, 0.2);
+  transform: translateY(-1px);
+}
+
+.navbar-contact:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* ===== Mobile Menu Button ===== */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+
+  background: transparent;
+  border: 1px solid #263449;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+
+  background: #f8fafc;
+  border-radius: 2px;
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.menu-toggle:focus-visible,
+.navbar-logo:focus-visible,
+.nav-link:focus-visible,
+.navbar-contact:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 4px;
+}
+
+/* ===== Responsive Navigation ===== */
+
+@media (max-width: 768px) {
+  .navbar {
+    min-height: 72px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: relative;
+    z-index: 2;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+
+    display: none;
+    align-items: stretch;
+    gap: 24px;
+
+    padding: 24px;
+
+    background: #0b1120;
+    border-bottom: 1px solid #263449;
+  }
+
+  .navbar-menu.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+
+  .nav-link::after {
+    width: 36px;
+  }
+
+  .navbar-contact {
+    align-self: flex-start;
+  }
+}
+
+/* ===== Reduced Motion ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-logo,
+  .nav-link,
+  .nav-link::after,
+  .navbar-contact,
+  .navbar-contact span,
+  .menu-toggle span {
+    transition: none;
+  }
+}
