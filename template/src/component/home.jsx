@@ -1,10 +1,11 @@
 
-
+import "../styles/home.css";
 
 function Hero() {
   return (
     <section className="hero section" id="home">
       <div className="container hero-container">
+        {/* Left: Introduction */}
         <div className="hero-content">
           <p className="hero-eyebrow">
             <span className="status-dot"></span>
@@ -42,42 +43,27 @@ function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Developer introduction">
-          <div className="hero-glow"></div>
+        {/* Right: Your portrait */}
+        <div className="hero-visual">
+          <div className="hero-photo-frame">
+            <div className="hero-photo-glow"></div>
 
-          <div className="hero-card">
-            <div className="hero-card-top">
-              <div className="hero-avatar">W.</div>
-              <span className="hero-card-label">DEVELOPER PROFILE</span>
+            <img
+              className="hero-photo"
+              src="./public/images/profile.jpg"
+              alt="Portrait of Wubadel Derbe"
+              fetchPriority="high"
+            />
+
+            <div className="hero-floating-tag hero-tag-top">
+              <span className="hero-tag-icon">{"{"}</span>
+              Problem solving
             </div>
 
-            <div className="hero-card-body">
-              <p className="hero-card-greeting">Hello, world!</p>
-              <h2>Turning ideas into applications.</h2>
-              <p className="hero-card-description">
-                Learning, building, and improving one project at a time.
-              </p>
+            <div className="hero-floating-tag hero-tag-bottom">
+              <span className="hero-tag-icon">✓</span>
+              Always learning
             </div>
-
-            <div className="hero-card-footer">
-              <span className="hero-tech">React</span>
-              <span className="hero-tech">JavaScript</span>
-              <span className="hero-tech">Node.js</span>
-            </div>
-
-            <div className="hero-code-decoration" aria-hidden="true">
-              {"</>"}
-            </div>
-          </div>
-
-          <div className="hero-floating-tag hero-tag-top">
-            <span className="hero-tag-icon">{"{"}</span>
-            Problem solving
-          </div>
-
-          <div className="hero-floating-tag hero-tag-bottom">
-            <span className="hero-tag-icon">✓</span>
-            Always learning
           </div>
         </div>
       </div>
