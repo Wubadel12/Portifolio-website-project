@@ -1,5 +1,5 @@
 
-
+import "../styles/skills.css"
 
 const skillGroups = [
   {
