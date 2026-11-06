@@ -112,6 +112,7 @@
   min-height: 390px;
 }
 
+
 .hero-glow {
   position: absolute;
   width: 300px;
@@ -119,6 +120,13 @@
   background: rgba(59, 130, 246, 0.2);
   border-radius: 50%;
   filter: blur(80px);
+}
+
+.hero-photo{
+   width: clamp(14rem, 5.3402rem + 39.5876vw, 38rem);
+  background: var(--color-border); 
+  border-radius:51% 49% 77% 23% / 65%  50% 50% 35% ;
+  overflow:hidden ;
 }
 
 .hero-card {

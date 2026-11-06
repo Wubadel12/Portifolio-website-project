@@ -55,7 +55,7 @@ function Hero() {
               fetchPriority="high"
             />
 
-            <div className="hero-floating-tag hero-tag-top">
+            {/* <div className="hero-floating-tag hero-tag-top">
               <span className="hero-tag-icon">{"{"}</span>
               Problem solving
             </div>
@@ -63,7 +63,7 @@ function Hero() {
             <div className="hero-floating-tag hero-tag-bottom">
               <span className="hero-tag-icon">✓</span>
               Always learning
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
