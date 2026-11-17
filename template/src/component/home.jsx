@@ -50,7 +50,7 @@ function Hero() {
 
             <img
               className="hero-photo"
-              src="./public/images/profile.jpg"
+              src="/images/profile.jpg"
               alt="Portrait of Wubadel Derbe"
               fetchPriority="high"
             />
