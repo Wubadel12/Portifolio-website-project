@@ -1,111 +1,48 @@
-
 import "../styles/skills.css";
 
-const skillGroups = [
-  {
-    number: "01",
-    title: "Frontend Development",
-    description:
-      "Creating interactive and responsive interfaces for the web.",
-    skills: [
-      { name: "HTML5", level: "Core knowledge" },
-      { name: "CSS3", level: "Core knowledge" },
-      { name: "JavaScript", level: "Core knowledge" },
-      { name: "React", level: "Developing" },
-    ],
-  },
-  {
-    number: "02",
-    title: "Backend Development",
-    description:
-      "Learning how servers, APIs, and databases work together.",
-    skills: [
-      { name: "Node.js", level: "Learning" },
-      { name: "Express.js", level: "Learning" },
-      { name: "REST APIs", level: "Learning" },
-      { name: "MySQL", level: "Learning" },
-    ],
-  },
-  {
-    number: "03",
-    title: "Tools & Workflow",
-    description:
-      "Tools I use to develop, manage, and organize projects.",
-    skills: [
-      { name: "Git", level: "Using" },
-      { name: "GitHub", level: "Using" },
-      { name: "VS Code", level: "Using" },
-      { name: "npm", level: "Using" },
-    ],
-  },
+const skills = [
+  { name: "HTML", mark: "5", group: "Frontend" },
+  { name: "CSS", mark: "#", group: "Frontend" },
+  { name: "JavaScript", mark: "JS", group: "Frontend" },
+  { name: "React", mark: "⚛", group: "Frontend" },
+  { name: "Node.js", mark: "⬡", group: "Backend" },
+  { name: "Express", mark: "EX", group: "Backend" },
+  { name: "Git", mark: "⑂", group: "Tools" },
+  { name: "GitHub", mark: "GH", group: "Tools" },
 ];
 
 function Skills() {
   return (
     <section className="skills section" id="skills">
       <div className="container">
-
-        {/* Heading */}
         <div className="skills-heading">
-          <p className="skills-eyebrow">
-            MY TOOLKIT <span>— 03</span>
-          </p>
-
-          <h2>
-            Technologies I
-            <br />
-            <span>work with.</span>
-          </h2>
-
+          <div>
+            <p className="skills-eyebrow">MY TOOLKIT <span>— 03</span></p>
+            <h2>Technologies I<br /><span>work with.</span></h2>
+          </div>
           <p className="skills-intro">
-            A growing collection of technologies and tools
-            I'm learning and using to build web applications.
+            A practical, growing toolkit for designing and developing useful web applications.
           </p>
         </div>
 
-        {/* Skill groups */}
-        <div className="skills-list">
-          {skillGroups.map((group) => (
-            <div className="skills-group" key={group.number}>
-
-              <div className="skills-group-heading">
-                <span className="skills-number">
-                  {group.number}
-                </span>
-
-                <div>
-                  <h3>{group.title}</h3>
-                  <p>{group.description}</p>
-                </div>
+        <div className="skills-grid">
+          {skills.map((skill) => (
+            <article className="skills-card" key={skill.name}>
+              <div className={`skills-mark skills-mark-${skill.name.toLowerCase().replace(/[^a-z]/g, "")}`} aria-hidden="true">{skill.mark}</div>
+              <div className="skills-card-copy">
+                <h3>{skill.name}</h3>
+                <p>{skill.group}</p>
               </div>
-
-              <div className="skills-items">
-                {group.skills.map((skill) => (
-                  <div className="skills-item" key={skill.name}>
-                    <span className="skills-name">
-                      {skill.name}
-                    </span>
-
-                    <span className="skills-level">
-                      {skill.level}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-            </div>
+              <span className="skills-card-arrow" aria-hidden="true">↗</span>
+            </article>
           ))}
         </div>
 
-        {/* Closing statement */}
         <div className="skills-footer">
-          <p>
-            I'm more interested in understanding how
-            technologies work than simply collecting
-            names of frameworks.
-          </p>
+          <span className="skills-footer-line" aria-hidden="true"></span>
+          <p>I’m growing my toolkit through practical projects and a focus on how the pieces work together.</p>
+          <span className="skills-footer-spacer" aria-hidden="true"></span>
         </div>
-
       </div>
     </section>
   );

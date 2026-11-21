@@ -4,110 +4,48 @@ function About() {
   return (
     <section className="about section" id="about">
       <div className="container">
-
-        {/* Heading */}
         <div className="about-heading">
-          <span className="about-eyebrow">
-            ABOUT ME <span>— 01</span>
-          </span>
-
-          <h2>
-            More than just
-            <br />
-            <span>writing code.</span>
-          </h2>
-
+          <p className="about-eyebrow">ABOUT ME <span>— 01</span></p>
+          <h2>Curious by nature.<br /><span>Engineer in progress.</span></h2>
           <p className="about-intro">
-            I'm interested in understanding technology,
-            solving problems, and building things that
-            make a difference.
+            I enjoy understanding how things work, then turning that understanding
+            into useful software.
           </p>
         </div>
 
-        {/* Main content */}
-        <div className="about-content">
-
-          <div className="about-label">
-            <span>01</span>
-            <span>MY JOURNEY</span>
+        <div className="about-profile">
+          <div className="about-portrait-wrap">
+            <img
+              className="about-portrait"
+              src="/images/profile.jpg"
+              alt="Portrait of Wubadel Derbe"
+              loading="lazy"
+            />
+            <span className="about-portrait-caption">BASED IN ETHIOPIA</span>
           </div>
 
           <div className="about-story">
-            <h3>
-              Hello, I'm Wubadel.
-              <span> A Software Engineering student with a passion for building useful software.</span>
-            </h3>
-
+            <p className="about-kicker">A LITTLE ABOUT ME</p>
+            <h3>Hello, I’m Wubadel.<br /><span>A Software Engineering student who loves building for the web.</span></h3>
             <p>
-              I'm currently studying Software Engineering
-              at Arba Minch University, Ethiopia. My interest
-              in technology comes from the opportunity to
-              solve problems and turn ideas into working
-              applications.
+              I’m studying Software Engineering at Arba Minch University. I’m
+              drawn to the way thoughtful code can turn an idea into something
+              people can use.
+            </p>
+            <p>
+              Right now, I’m growing my React skills and learning backend
+              development through hands-on projects. I’m especially curious
+              about the logic and architecture that make software reliable.
             </p>
 
-            <p>
-              I enjoy understanding how software works
-              behind the scenes. I'm particularly interested
-              in the logic, architecture, and engineering
-              principles that make applications reliable
-              and maintainable.
-            </p>
-
-            <p>
-              At the moment, I'm strengthening my React
-              skills and learning backend development
-              through practical projects. I believe in
-              learning by building, making mistakes, and
-              understanding why things work.
-            </p>
-
-            <p>
-              My long-term ambition is to become a
-              professional software engineer and build
-              products that solve meaningful problems.
-            </p>
-          </div>
-        </div>
-
-        {/* Personal information */}
-        <div className="about-bottom">
-          <div className="about-bottom-heading">
-            <span>02</span>
-            <span>AT A GLANCE</span>
-          </div>
-
-          <div className="about-info">
-            <div className="about-info-item">
-              <span>EDUCATION</span>
-              <h4>Software Engineering</h4>
-              <p>Arba Minch University</p>
+            <div className="about-details">
+              <div><span>EDUCATION</span><strong>Software Engineering</strong><small>Arba Minch University</small></div>
+              <div><span>CURRENT FOCUS</span><strong>React &amp; Backend</strong><small>Learning by building</small></div>
             </div>
 
-            <div className="about-info-item">
-              <span>CURRENT FOCUS</span>
-              <h4>React & Backend</h4>
-              <p>Learning through practical projects</p>
-            </div>
-
-            <div className="about-info-item">
-              <span>LONG-TERM GOAL</span>
-              <h4>Build meaningful products</h4>
-              <p>Grow as a software engineer</p>
-            </div>
+            <a href="#projects" className="about-link">See what I’m building <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-
-        {/* Closing link */}
-        <div className="about-footer">
-          <p>Interested in what I'm building?</p>
-
-          <a href="#projects" className="about-link">
-            Explore my projects
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-
       </div>
     </section>
   );
