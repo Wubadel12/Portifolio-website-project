@@ -65,6 +65,7 @@
 .skills-icon-react { width: 40px; height: 40px; }
 .skills-icon-tailwindcss { width: 42px; height: 34px; }
 .skills-icon-express { filter: brightness(0) invert(1); }
+.skills-icon-github { filter: brightness(0) invert(1); }
 .skills-icon-postgresql { width: 36px; height: 36px; }
 
 .skills-mark {

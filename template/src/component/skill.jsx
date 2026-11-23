@@ -9,8 +9,8 @@ const skills = [
   { name: "Node.js", icon: "/images/nodedotjs(1).svg", group: "Backend" },
   { name: "Express", icon: "/images/express.svg", group: "Backend" },
   { name: "PostgreSQL", icon: "/images/postgresql.svg", group: "Backend" },
-  { name: "Git", mark: "⑂", group: "Tools" },
-  { name: "GitHub", mark: "GH", group: "Tools" },
+  { name: "Git", icon: "/images/git(1).svg", group: "Tools" },
+  { name: "GitHub", icon: "/images/github.svg", group: "Tools" },
 ];
 
 function Skills() {

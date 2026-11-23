@@ -1,130 +1,117 @@
-
+import "../styles/project.css";
 
 const projects = [
   {
     number: "01",
-    name: "DevFlow",
-    category: "Project Management Application",
-    description:
-      "A project management application designed to help users organize projects, manage tasks, track progress, and stay productive.",
-    technologies: ["React", "JavaScript", "CSS", "Node.js", "Express"],
-    status: "In Development",
-    github: "#",
-    demo: "#",
+    name: "Dev Flow",
+    category: "Productivity",
+    description: "A workspace for planning projects, organizing tasks, and keeping progress in view.",
+    art: "flow",
+    mark: "DF",
+    preview: "Team workspace",
   },
   {
     number: "02",
-    name: "EduCart",
-    category: "E-commerce Application",
-    description:
-      "A course-shopping application where users can explore courses, view product details, manage their cart, and proceed through checkout.",
-    technologies: ["React", "JavaScript", "CSS", "React Router"],
-    status: "Personal Project",
-    github: "#",
-    demo: "#",
+    name: "Hotel Management",
+    category: "Hospitality",
+    description: "A hotel operations experience for keeping rooms, guest details, and reservations organized.",
+    art: "hotel",
+    mark: "HM",
+    preview: "Hotel overview",
   },
   {
     number: "03",
+    name: "Birthday Bloom",
+    category: "Interactive Web",
+    description: "A playful birthday experience with story scenes, music, photos, and little surprises.",
+    art: "bloom",
+    mark: "✿",
+    preview: "A little surprise",
+  },
+  {
+    number: "04",
+    name: "Ecommerce",
+    category: "Online Store",
+    description: "A storefront experience for exploring products and moving smoothly from browsing to cart.",
+    art: "commerce",
+    mark: "EC",
+    preview: "Featured products",
+  },
+  {
+    number: "05",
     name: "Personal Portfolio",
-    category: "Personal Website",
-    description:
-      "A personal portfolio website built to introduce myself, showcase my technical skills, and present my software development journey.",
-    technologies: ["React", "JavaScript", "CSS", "Vite"],
-    status: "In Development",
-    github: "#",
-    demo: "#",
+    category: "Portfolio",
+    description: "A personal site for introducing my work, sharing my skills, and documenting my growth.",
+    art: "portfolio",
+    mark: "W.",
+    preview: "Hello, I’m Wubadel",
+  },
+  {
+    number: "06",
+    name: "Expense Tracker",
+    category: "Finance",
+    description: "A clear way to record everyday spending and see where a monthly budget is going.",
+    art: "expense",
+    mark: "↗",
+    preview: "Monthly summary",
   },
 ];
+
+function ProjectPreview({ project }) {
+  return (
+    <div className={`project-cover project-cover-${project.art}`} aria-hidden="true">
+      <div className="project-cover-top">
+        <span>PROJECT {project.number}</span>
+        <span className="project-cover-status"><i></i> SELECTED WORK</span>
+      </div>
+
+      <div className={`project-mock project-mock-${project.art}`}>
+        <div className="project-mock-bar">
+          <span className="project-mock-mark">{project.mark}</span>
+          <span className="project-mock-dots"><i></i><i></i><i></i></span>
+        </div>
+        <div className="project-mock-body">
+          <div className="project-mock-sidebar"><i></i><i></i><i></i><i></i></div>
+          <div className="project-mock-content">
+            <strong>{project.preview}</strong>
+            <div className="project-mock-stats"><i></i><i></i><i></i></div>
+            <div className="project-mock-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+
+      <span className="project-cover-mark">{project.mark}</span>
+    </div>
+  );
+}
 
 function Projects() {
   return (
     <section className="projects section" id="projects">
       <div className="container">
-
-        {/* Heading */}
-        <div className="projects-heading">
-          <p className="projects-eyebrow">
-            MY WORK <span>— 04</span>
-          </p>
-
-          <h2>
-            Things I've
-            <br />
-            <span>been building.</span>
-          </h2>
-
+        <header className="projects-heading">
+          <p className="projects-eyebrow">SELECTED WORK <span>— 04</span></p>
+          <h2>Featured <span>Projects</span></h2>
           <p className="projects-intro">
-            A selection of projects where I turn ideas
-            into practical applications and continue
-            developing my engineering skills.
+            A collection of things I’m building and exploring, shaped by curiosity and a love of solving problems.
           </p>
-        </div>
+        </header>
 
-        {/* Project list */}
-        <div className="projects-list">
+        <div className="projects-grid">
           {projects.map((project) => (
-            <article className="project-item" key={project.number}>
-
-              <div className="project-number">
-                {project.number}
-              </div>
-
-              <div className="project-details">
-                <div className="project-top">
-                  <span className="project-category">
-                    {project.category}
-                  </span>
-
-                  <span className="project-status">
-                    {project.status}
-                  </span>
+            <article className={`project-card project-card-${project.art}`} key={project.number}>
+              <ProjectPreview project={project} />
+              <div className="project-card-content">
+                <div className="project-card-meta">
+                  <span>{project.category}</span>
+                  <span>{project.number} / 06</span>
                 </div>
-
                 <h3>{project.name}</h3>
-
-                <p className="project-description">
-                  {project.description}
-                </p>
-
-                <div className="project-technologies">
-                  {project.technologies.map((technology) => (
-                    <span key={technology}>
-                      {technology}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="project-links">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub <span>↗</span>
-                  </a>
-
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live Demo <span>↗</span>
-                  </a>
-                </div>
+                <p>{project.description}</p>
               </div>
-
             </article>
           ))}
         </div>
-
-        {/* Footer */}
-        <div className="projects-footer">
-          <p>
-            Every project is an opportunity to learn,
-            experiment, and improve.
-          </p>
-        </div>
-
       </div>
     </section>
   );
