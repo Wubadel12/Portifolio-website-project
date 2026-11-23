@@ -7,8 +7,7 @@ const projects = [
     category: "Productivity",
     description: "A workspace for planning projects, organizing tasks, and keeping progress in view.",
     art: "flow",
-    mark: "DF",
-    preview: "Team workspace",
+    image: "/images/images.jpeg",
   },
   {
     number: "02",
@@ -16,8 +15,7 @@ const projects = [
     category: "Hospitality",
     description: "A hotel operations experience for keeping rooms, guest details, and reservations organized.",
     art: "hotel",
-    mark: "HM",
-    preview: "Hotel overview",
+    image: "/images/hotel.jpeg",
   },
   {
     number: "03",
@@ -25,8 +23,7 @@ const projects = [
     category: "Interactive Web",
     description: "A playful birthday experience with story scenes, music, photos, and little surprises.",
     art: "bloom",
-    mark: "✿",
-    preview: "A little surprise",
+    image: "/images/birthday.jpeg",
   },
   {
     number: "04",
@@ -34,8 +31,7 @@ const projects = [
     category: "Online Store",
     description: "A storefront experience for exploring products and moving smoothly from browsing to cart.",
     art: "commerce",
-    mark: "EC",
-    preview: "Featured products",
+    image: "/images/eccomerce.jpeg",
   },
   {
     number: "05",
@@ -43,8 +39,7 @@ const projects = [
     category: "Portfolio",
     description: "A personal site for introducing my work, sharing my skills, and documenting my growth.",
     art: "portfolio",
-    mark: "W.",
-    preview: "Hello, I’m Wubadel",
+    image: "/images/portifolio.jpeg",
   },
   {
     number: "06",
@@ -52,35 +47,18 @@ const projects = [
     category: "Finance",
     description: "A clear way to record everyday spending and see where a monthly budget is going.",
     art: "expense",
-    mark: "↗",
-    preview: "Monthly summary",
+    image: "/images/expense.jpeg",
   },
 ];
 
 function ProjectPreview({ project }) {
   return (
     <div className={`project-cover project-cover-${project.art}`} aria-hidden="true">
+      <img className="project-image" src={project.image} alt="" loading="lazy" />
       <div className="project-cover-top">
         <span>PROJECT {project.number}</span>
         <span className="project-cover-status"><i></i> SELECTED WORK</span>
       </div>
-
-      <div className={`project-mock project-mock-${project.art}`}>
-        <div className="project-mock-bar">
-          <span className="project-mock-mark">{project.mark}</span>
-          <span className="project-mock-dots"><i></i><i></i><i></i></span>
-        </div>
-        <div className="project-mock-body">
-          <div className="project-mock-sidebar"><i></i><i></i><i></i><i></i></div>
-          <div className="project-mock-content">
-            <strong>{project.preview}</strong>
-            <div className="project-mock-stats"><i></i><i></i><i></i></div>
-            <div className="project-mock-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          </div>
-        </div>
-      </div>
-
-      <span className="project-cover-mark">{project.mark}</span>
     </div>
   );
 }
