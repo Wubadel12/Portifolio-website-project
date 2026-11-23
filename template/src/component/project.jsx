@@ -1,29 +1,38 @@
-import "../styles/project.css";
+
 
 const projects = [
   {
     number: "01",
-    name: "Personal Portfolio",
+    name: "DevFlow",
+    category: "Project Management Application",
     description:
-      "A responsive portfolio introducing my work, skills, and journey as a software engineering student.",
-    tools: "React · CSS",
-    status: "In progress",
+      "A project management application designed to help users organize projects, manage tasks, track progress, and stay productive.",
+    technologies: ["React", "JavaScript", "CSS", "Node.js", "Express"],
+    status: "In Development",
+    github: "#",
+    demo: "#",
   },
   {
     number: "02",
-    name: "Frontend Practice",
+    name: "EduCart",
+    category: "E-commerce Application",
     description:
-      "Small interface projects for practicing accessible layouts, responsive design, and interactive components.",
-    tools: "HTML · CSS · JavaScript",
-    status: "Ongoing",
+      "A course-shopping application where users can explore courses, view product details, manage their cart, and proceed through checkout.",
+    technologies: ["React", "JavaScript", "CSS", "React Router"],
+    status: "Personal Project",
+    github: "#",
+    demo: "#",
   },
   {
     number: "03",
-    name: "Backend Learning",
+    name: "Personal Portfolio",
+    category: "Personal Website",
     description:
-      "Practical exercises exploring APIs, server-side logic, and working with databases.",
-    tools: "Node.js · Express · MySQL",
-    status: "Learning",
+      "A personal portfolio website built to introduce myself, showcase my technical skills, and present my software development journey.",
+    technologies: ["React", "JavaScript", "CSS", "Vite"],
+    status: "In Development",
+    github: "#",
+    demo: "#",
   },
 ];
 
@@ -31,34 +40,91 @@ function Projects() {
   return (
     <section className="projects section" id="projects">
       <div className="container">
+
+        {/* Heading */}
         <div className="projects-heading">
-          <div>
-            <p className="projects-eyebrow">SELECTED WORK <span>— 04</span></p>
-            <h2 className="projects-title">Things I’m building and learning.</h2>
-          </div>
+          <p className="projects-eyebrow">
+            MY WORK <span>— 04</span>
+          </p>
+
+          <h2>
+            Things I've
+            <br />
+            <span>been building.</span>
+          </h2>
+
           <p className="projects-intro">
-            A few steps in my journey toward building useful, reliable software.
+            A selection of projects where I turn ideas
+            into practical applications and continue
+            developing my engineering skills.
           </p>
         </div>
 
-        <div className="projects-grid">
+        {/* Project list */}
+        <div className="projects-list">
           {projects.map((project) => (
-            <article className="project-card" key={project.number}>
-              <div className="project-card-top">
-                <span>{project.number}</span>
-                <span>{project.status}</span>
+            <article className="project-item" key={project.number}>
+
+              <div className="project-number">
+                {project.number}
               </div>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <span className="project-tools">{project.tools}</span>
+
+              <div className="project-details">
+                <div className="project-top">
+                  <span className="project-category">
+                    {project.category}
+                  </span>
+
+                  <span className="project-status">
+                    {project.status}
+                  </span>
+                </div>
+
+                <h3>{project.name}</h3>
+
+                <p className="project-description">
+                  {project.description}
+                </p>
+
+                <div className="project-technologies">
+                  {project.technologies.map((technology) => (
+                    <span key={technology}>
+                      {technology}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="project-links">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub <span>↗</span>
+                  </a>
+
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo <span>↗</span>
+                  </a>
+                </div>
+              </div>
+
             </article>
           ))}
         </div>
 
-        <div className="projects-contact" id="contact">
-          <p>Have an idea or want to connect?</p>
-          <a href="mailto:hello@wubadel.dev">Let’s talk <span aria-hidden="true">↗</span></a>
+        {/* Footer */}
+        <div className="projects-footer">
+          <p>
+            Every project is an opportunity to learn,
+            experiment, and improve.
+          </p>
         </div>
+
       </div>
     </section>
   );

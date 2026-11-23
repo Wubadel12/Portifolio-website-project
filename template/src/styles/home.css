@@ -3,14 +3,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 680px;
+  min-height: clamp(760px, calc(100vh - 80px), 920px);
   padding-top: 75px;
   padding-bottom: 95px;
   background-color: var(--color-bg);
   background-image: url("/images/hero-background.jpg");
-  background-position: center;
+  background-position: right center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
   overflow: hidden;
 }
 
@@ -325,7 +325,8 @@
     min-height: 650px;
     padding-top: 60px;
     padding-bottom: 95px;
-    background-position: 82% center;
+    background-position: right bottom;
+    background-size: auto 82%;
   }
 
   .hero-container {

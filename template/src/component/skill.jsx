@@ -1,12 +1,14 @@
 import "../styles/skills.css";
 
 const skills = [
-  { name: "HTML", mark: "5", group: "Frontend" },
-  { name: "CSS", mark: "#", group: "Frontend" },
-  { name: "JavaScript", mark: "JS", group: "Frontend" },
-  { name: "React", mark: "⚛", group: "Frontend" },
-  { name: "Node.js", mark: "⬡", group: "Backend" },
-  { name: "Express", mark: "EX", group: "Backend" },
+  { name: "HTML", icon: "/images/html-logo.svg", group: "Frontend" },
+  { name: "CSS", icon: "/images/css-logo.svg", group: "Frontend" },
+  { name: "JavaScript", icon: "/images/javascript-logo.svg", group: "Frontend" },
+  { name: "React", icon: "/images/react-logo.svg", group: "Frontend" },
+  { name: "Tailwind CSS", icon: "/images/tailwind-css-logo.svg", group: "Frontend" },
+  { name: "Node.js", icon: "/images/nodedotjs(1).svg", group: "Backend" },
+  { name: "Express", icon: "/images/express.svg", group: "Backend" },
+  { name: "PostgreSQL", icon: "/images/postgresql.svg", group: "Backend" },
   { name: "Git", mark: "⑂", group: "Tools" },
   { name: "GitHub", mark: "GH", group: "Tools" },
 ];
@@ -28,12 +30,24 @@ function Skills() {
         <div className="skills-grid">
           {skills.map((skill) => (
             <article className="skills-card" key={skill.name}>
-              <div className={`skills-mark skills-mark-${skill.name.toLowerCase().replace(/[^a-z]/g, "")}`} aria-hidden="true">{skill.mark}</div>
+              <div className="skills-icon-wrap" aria-hidden="true">
+                {skill.icon ? (
+                  <img
+                    className={`skills-icon skills-icon-${skill.name.toLowerCase().replace(/[^a-z]/g, "")}`}
+                    src={skill.icon}
+                    alt=""
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className={`skills-mark skills-mark-${skill.name.toLowerCase()}`}>
+                    {skill.mark}
+                  </span>
+                )}
+              </div>
               <div className="skills-card-copy">
                 <h3>{skill.name}</h3>
                 <p>{skill.group}</p>
               </div>
-              <span className="skills-card-arrow" aria-hidden="true">↗</span>
             </article>
           ))}
         </div>
