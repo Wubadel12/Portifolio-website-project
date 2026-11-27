@@ -3,7 +3,7 @@ import "../styles/project.css";
 const projects = [
   {
     number: "01",
-    name: "Dev Flow",
+    name: "DevFlow",
     category: "Productivity",
     description: "A workspace for planning projects, organizing tasks, and keeping progress in view.",
     art: "flow",
@@ -58,7 +58,6 @@ function ProjectPreview({ project }) {
       <img className="project-image" src={project.image} alt="" loading="lazy" />
       <div className="project-cover-top">
         <span>PROJECT {project.number}</span>
-        <span className="project-cover-status"><i></i> SELECTED WORK</span>
       </div>
     </div>
   );
@@ -69,11 +68,14 @@ function Projects() {
     <section className="projects section" id="projects">
       <div className="container">
         <header className="projects-heading">
-          <p className="projects-eyebrow">SELECTED WORK <span>— 04</span></p>
-          <h2>Featured <span>Projects</span></h2>
+          <p className="projects-eyebrow">PROJECTS <span>— 03</span></p>
+          <h2>Projects I’ve <span>built</span></h2>
           <p className="projects-intro">
-            A collection of things I’m building and exploring, shaped by curiosity and a love of solving problems.
+            Six projects from my time learning to build for the web. Browse the repository list for source code and project details.
           </p>
+          <a className="projects-all-link" href={githubProjectsUrl} target="_blank" rel="noreferrer">
+            Browse all repositories <span aria-hidden="true">↗</span>
+          </a>
         </header>
 
         <div className="projects-grid">
@@ -87,15 +89,6 @@ function Projects() {
                 </div>
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
-                <a
-                  className="project-link"
-                  href={githubProjectsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Browse Wubadel's GitHub repositories for ${project.name}`}
-                >
-                  Explore on GitHub <span aria-hidden="true">↗</span>
-                </a>
               </div>
             </article>
           ))}

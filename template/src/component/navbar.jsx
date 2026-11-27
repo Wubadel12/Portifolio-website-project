@@ -1,13 +1,22 @@
 
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import '../styles/navbar.css'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
   return (
     <header className="site-header">
@@ -22,7 +31,7 @@ function Navbar() {
         </a>
 
         <button
-          className="menu-toggle"
+          className={`menu-toggle ${menuOpen ? "is-open" : ""}`}
           type="button"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -40,7 +49,7 @@ function Navbar() {
         >
           <ul className="navbar-links">
             <li>
-              <a href="#home" className="nav-link active" onClick={closeMenu}>
+              <a href="#home" className="nav-link" onClick={closeMenu}>
                 Home
               </a>
             </li>

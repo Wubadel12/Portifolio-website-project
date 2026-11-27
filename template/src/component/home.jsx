@@ -8,16 +8,15 @@ function Hero() {
         {/* Left: Introduction */}
         <div className="hero-content">
           <p className="hero-eyebrow">
-            <span className="status-dot"></span>
-            HI THERE!
+            SOFTWARE ENGINEERING STUDENT
           </p>
 
           <h1 className="hero-title">
-            I am <span>Developer.</span>
+            I’m Wubadel<br /><span>Derbe.</span>
           </h1>
 
           <p className="hero-description">
-            I make the complex simple.
+            I study Software Engineering at Arba Minch University and build web projects as I grow my frontend and backend skills.
           </p>
 
           <div className="hero-actions">
@@ -34,7 +33,7 @@ function Hero() {
           <div className="hero-meta">
             <span>Based in Ethiopia</span>
             <span className="hero-meta-divider"></span>
-            <span>Open to learning and collaboration</span>
+            <span>Learning by building</span>
           </div>
 
           <a

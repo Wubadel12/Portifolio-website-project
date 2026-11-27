@@ -8,12 +8,15 @@ import Contact from "./component/contact";
 function App() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Navbar />
-      <Home />
-      <About/>
-      <Skills/>
-      <Projects/>
-      <Contact />
+      <main id="main-content">
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
     </>
   );
 }

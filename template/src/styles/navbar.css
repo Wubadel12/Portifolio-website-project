@@ -146,6 +146,8 @@
   transform: translate(2px, -2px);
 }
 
+.navbar-contact:focus-visible { outline: 2px solid #93c5fd; outline-offset: 4px; }
+
 /* ===== Mobile Menu Button ===== */
 
 .menu-toggle {
@@ -177,6 +179,10 @@
     transform 180ms ease,
     opacity 180ms ease;
 }
+
+.menu-toggle.is-open span:first-child { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open span:last-child { transform: translateY(-7px) rotate(-45deg); }
 
 .menu-toggle:focus-visible,
 .navbar-logo:focus-visible,

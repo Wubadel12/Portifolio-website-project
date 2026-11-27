@@ -19,7 +19,7 @@ function Skills() {
       <div className="container">
         <div className="skills-heading">
           <div>
-            <p className="skills-eyebrow">MY TOOLKIT <span>— 03</span></p>
+            <p className="skills-eyebrow">MY TOOLKIT <span>— 02</span></p>
             <h2>Technologies I<br /><span>work with.</span></h2>
           </div>
           <p className="skills-intro">

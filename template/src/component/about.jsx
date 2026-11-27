@@ -17,7 +17,7 @@ function About() {
           <div className="about-portrait-wrap">
             <img
               className="about-portrait"
-              src="/images/about-portrait.png"
+              src="/images/hero-background.jpg"
               alt="Portrait of Wubadel Derbe"
               loading="lazy"
             />
