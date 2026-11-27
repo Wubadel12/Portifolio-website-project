@@ -50,6 +50,7 @@ const projects = [
     image: "/images/expense.jpeg",
   },
 ];
+const githubProjectsUrl = "https://github.com/Wubadel12?tab=repositories";
 
 function ProjectPreview({ project }) {
   return (
@@ -86,6 +87,15 @@ function Projects() {
                 </div>
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
+                <a
+                  className="project-link"
+                  href={githubProjectsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Browse Wubadel's GitHub repositories for ${project.name}`}
+                >
+                  Explore on GitHub <span aria-hidden="true">↗</span>
+                </a>
               </div>
             </article>
           ))}
